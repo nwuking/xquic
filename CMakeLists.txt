@@ -20,14 +20,17 @@ endif()
 if(${SSL_TYPE} MATCHES "babassl")
     # PATH of ssl
     if(NOT SSL_PATH)
-        set(SSL_PATH "/usr/local/babassl")
+        #set(SSL_PATH "/usr/local/babassl")
+        set(SSL_PATH "/Users/nwuking/personal/xquic/third_party/babassl")
     endif()
 
     # ssl lib denpendency
     if(NOT SSL_LIB_PATH)
         set(SSL_LIB_PATH
-            ${SSL_PATH}/lib/libssl.a
-            ${SSL_PATH}/lib/libcrypto.a
+            #${SSL_PATH}/lib/libssl.a
+            #${SSL_PATH}/lib/libcrypto.a
+            ${SSL_PATH}/libssl.a
+            ${SSL_PATH}/libcrypto.a
         )
     endif()
 elseif(${SSL_TYPE} MATCHES "boringssl")
